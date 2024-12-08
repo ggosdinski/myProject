@@ -1,13 +1,22 @@
-const form = document.getElementById('reservation-form');
-const confirmation = document.getElementById('confirmation');
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTopButton = document.getElementById('backToTop');
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar el envío del formulario
+    // Show the button when the user scrolls down 20px from the top of the document
+    window.onscroll = () => {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    };
 
-    // Mostrar mensaje de confirmación
-    confirmation.style.display = 'block';
-    form.reset(); // Restablecer el formulario
+    // When the user clicks on the button, scroll to the top of the document
+    backToTopButton.addEventListener('click', () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
 });
+
 
 
 
