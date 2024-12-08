@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Reservations - Sabores del Perú</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/siteplan.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <main>
@@ -15,7 +15,7 @@
             <h1>Sabores del Perú - Reservations</h1>
             <nav>
                 <ul>
-                    <li><a href="siteplan.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="reservations.html">Reservations</a></li>
                 </ul>
@@ -70,18 +70,5 @@
             <a href="https://www.twitter.com" target="_blank">Twitter</a>
         </footer>
     </main>
-
-    <script>
-        const form = document.getElementById('reservation-form');
-        const confirmation = document.getElementById('confirmation');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar el envío del formulario
-
-            // Mostrar mensaje de confirmación
-            confirmation.style.display = 'block';
-            form.reset(); // Restablecer el formulario
-        });
-    </script>
 </body>
 </html>
