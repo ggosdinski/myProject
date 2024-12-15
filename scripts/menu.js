@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/*FILTER*/
+/* FILTER */
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".filter-btn");
     const menuItems = document.querySelectorAll(".menu-item");
@@ -89,7 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Mostrar u ocultar platos según el filtro
             menuItems.forEach(item => {
-                if (filterType === "all" || item.getAttribute("data-type") === filterType) {
+                const itemType = item.getAttribute("data-type");
+
+                if (filterType === "all" || itemType.includes(filterType)) {
                     item.style.display = "block"; // Mostrar
                 } else {
                     item.style.display = "none"; // Ocultar
