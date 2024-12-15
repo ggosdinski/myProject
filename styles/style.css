@@ -180,6 +180,14 @@ figcaption {
     margin-top: 15px;
 }
 
+#restaurant-status {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #e7ca00; /* Color del texto, puedes cambiarlo */
+}
+
+
 
 /* Redes Sociales en el Footer */
 footer p {
@@ -219,7 +227,7 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.2s ease;
+    transition: transform 0.6s ease-in-out; 
     max-height: 400px; /* Altura máxima para mantener consistencia */
 }
 
@@ -251,9 +259,86 @@ footer {
     margin-bottom: 20px;
 }
 
-.favorite-btn{
-    margin: 10px;
+.favorite-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
+
+.favorite-icon {
+    margin-right: 5px;
+    color: gray; /* Corazón gris por defecto */
+}
+
+.favorite-btn.active .favorite-icon {
+    color: red; /* Corazón rojo cuando se agrega a favoritos */
+}
+
+.remove-favorite-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding: 5px;
+    color: red;
+}
+
+.remove-favorite-btn.active {
+    display: inline-flex; /* Mostrar solo si está activo */
+}
+
+/* Toast */
+.toast {
+    position: absolute;
+    top: 20px; /* Ubicación en la esquina superior izquierda */
+    left: 20px;
+    background-color: #ffb400;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    z-index: 1000;
+    opacity: 0; /* Inicia oculto */
+    visibility: hidden; /* Completamente invisible */
+    transition: opacity 0.3s ease, visibility 0s 0.3s, top 0.3s ease; /* Mejores transiciones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.toast.show {
+    opacity: 1; /* Se hace visible */
+    visibility: visible; /* Lo hace visible */
+    top: 30px; /* Ajuste visual */
+    transition: opacity 0.3s ease, visibility 0s 0s, top 0.3s ease; /* Cambio de visibilidad al instante */
+}
+
+/* Capa de fondo difusa (overlay) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente */
+    z-index: 999;  /* Debe estar debajo del toast */
+    opacity: 0;  /* Inicialmente invisible */
+    visibility: hidden;  /* Inicialmente no visible */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 
 /* Reservations*/
 .reservations {
