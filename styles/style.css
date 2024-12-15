@@ -38,7 +38,6 @@ a.cta-btn {
     border-radius: 5px;
 }
 
-
 header {
     background-color: #C8102E;
     color: white;
@@ -158,10 +157,8 @@ figcaption {
     font-weight: bold;
     font-size: 18px;
     margin-top: 10px;
-    color: #e7ca00; /* Color del texto, puedes cambiarlo */
+    color: #e7ca00; /* Color del texto*/
 }
-
-
 
 /* Redes Sociales en el Footer */
 footer p {
@@ -512,7 +509,8 @@ a.cta-btn:hover, .reservations button:hover, #backToTop:hover {
 /* Sombra dinámica */
 section, .menu-item, .contact-card {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.5s ease-in-out;
+    
 }
 
 section:hover, .menu-item:hover, .contact-card:hover {
