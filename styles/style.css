@@ -207,12 +207,15 @@ footer {
 }
 
 /* Ensure images maintain the same aspect ratio */
+/* Imágenes dentro de los elementos del menú */
 .menu-item img {
     width: 100%;
-    height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Ensures images are cropped to fit the container */
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: cover;
     border-bottom: 3px solid #e7ca00;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Transiciones más suaves */
 }
+
 
 .menu-item h3 {
     color: #C8102E;
@@ -507,15 +510,29 @@ a.cta-btn:hover, .reservations button:hover, #backToTop:hover {
 }
 
 /* Sombra dinámica */
-section, .menu-item, .contact-card {
+section, .contact-card {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.5s ease-in-out;
     
 }
 
-section:hover, .menu-item:hover, .contact-card:hover {
+section:hover .contact-card:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out, box-shadow 0.5s ease-in-out; 
+}
+
+/* Sombra solo al contenedor en hover */
+.menu-item:hover {
+    transform: scale(1.05); /* Mantén o ajusta según prefieras */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Enlaces con subrayado animado */
 nav ul li a {
