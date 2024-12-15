@@ -56,6 +56,30 @@ nav ul li {
     margin: 0 10px;
 }
 
+.filter {
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: none;
+}
+
+.filter-btn {
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #C8102E;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
 .hero {
     background-image: url('../images/lomoSaltado.webp');
     background-size: cover;

@@ -71,3 +71,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 });
+
+
+/*FILTER*/
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Remover la clase activa de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            // Obtener el filtro seleccionado
+            const filterType = button.getAttribute("data-filter");
+
+            // Mostrar u ocultar platos según el filtro
+            menuItems.forEach(item => {
+                if (filterType === "all" || item.getAttribute("data-type") === filterType) {
+                    item.style.display = "block"; // Mostrar
+                } else {
+                    item.style.display = "none"; // Ocultar
+                }
+            });
+        });
+    });
+});
