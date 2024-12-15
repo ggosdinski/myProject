@@ -40,7 +40,7 @@ a.cta-btn {
 
 
 header {
-    background-color: #C8102E; 
+    background-color: #C8102E;
     color: white;
     padding: 10px;
     text-align: center;
@@ -49,10 +49,11 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex; /* Usamos flexbox para alinear los elementos en una fila */
+    justify-content: center; /* Centra los elementos */
 }
 
 nav ul li {
-    display: inline;
     margin: 0 10px;
 }
 
@@ -407,7 +408,15 @@ footer {
 /* Responsive design for mobile */
 @media only screen and (max-width: 700px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Single column layout on small screens */
+        grid-template-columns: 1fr; /* Layout de una sola columna en pantallas pequeñas */
+    }
+    nav ul {
+        display: block; /* Cambia a bloque para que se muestren en una sola columna */
+        text-align: center; /* Centra los enlaces */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Espaciado vertical entre los elementos */
     }
 }
 
@@ -528,17 +537,4 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
-}
-
-/* Botón "Back to Top" con aparición suave */
-#backToTop {
-    opacity: 0;
-    visibility: hidden;
-    animation: fadeIn 0.5s ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-#backToTop.visible {
-    opacity: 1;
-    visibility: visible;
 }

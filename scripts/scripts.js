@@ -1,3 +1,5 @@
+
+
 // Obtener el elemento donde se mostrará el estado del restaurante
 const statusElement = document.getElementById('restaurant-status');
 
@@ -40,3 +42,5 @@ document.getElementById('reservation-form').addEventListener('submit', function 
     const reservation = { name, number, date, time, comments };
     localStorage.setItem('latestReservation', JSON.stringify(reservation));
 });
+
+
